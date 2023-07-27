@@ -91,11 +91,6 @@ def main():
     # Redirection code after authentication
     if st.session_state.get("logged_in"):
         chatbot()
-    
-  # Logout Button     
-    if st.button("Logout 🔒"):
-        st.session_state["logged_in"] = False
-        st.info("Logged out successfully. Please log in.")
 
 
 # Home page code for displaying the messages
@@ -108,6 +103,11 @@ def chatbot():
 
          💡 Note: No Sign-in or API key required!
     ''')
+    
+  # Logout Button     
+    if st.button("Logout 🔒"):
+        st.session_state["logged_in"] = False
+        st.info("Logged out successfully. Please log in.")
 
     # Giving access to HugChat API
     EMAIL = st.secrets["db_email"]
