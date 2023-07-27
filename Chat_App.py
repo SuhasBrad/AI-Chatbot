@@ -92,10 +92,6 @@ def main():
     if st.session_state.get("logged_in"):
         chatbot()
 
-        # Add speech recognition button
-        if st.button("Speech Recognition 🎤"):
-            speech_recognition()
-
 
 # Home page code for displaying the messages
 def chatbot():
@@ -107,7 +103,6 @@ def chatbot():
 
          💡 Note: No Sign-in or API key required!
     ''')
-    st.markdown("Press 👇 button to activate Speech Recognition.")
 
     # Giving access to HugChat API
     EMAIL = st.secrets["db_email"]
