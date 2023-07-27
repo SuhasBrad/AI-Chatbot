@@ -7,7 +7,7 @@ from hugchat_api import HuggingChat
 from hugchat.hugchat import ChatBot
 
 # Create a connection to the database
-conn = sqlite3.connect(users.db)
+conn = sqlite3.connect("users.db")
 c = conn.cursor()
 
 # Create users table if it doesn't exist
