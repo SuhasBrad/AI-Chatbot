@@ -5,4 +5,3 @@ hugchat>=0.0.8
 streamlit-extras>=0.0.1
 hugchat-api
 transformers>=4.11.0
-speech_recognition
