@@ -7,7 +7,7 @@ from hugchat_api import HuggingChat
 from hugchat.hugchat import ChatBot
 
 # Create a connection to the database
-db_path = "https://github.com/SuhasBrad/AI-Chatbot/blob/main/users.db"
+db_path = "C:/Users/suhas/PycharmProjects/Chat/users.db"
 conn = sqlite3.connect(db_path)
 c = conn.cursor()
 
@@ -180,6 +180,7 @@ def chatbot():
                     st.error(f"An error occurred during response generation: {str(e)}")
                     # Update the chat history with the error message
                     st.session_state.messages.append({"role": "assistant", "content": f"An error occurred: {str(e)}"})
+
 
 # Script initialization
 if __name__ == "__main__":
