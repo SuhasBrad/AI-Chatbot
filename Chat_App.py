@@ -7,7 +7,6 @@ from hugchat_api import HuggingChat
 from hugchat.hugchat import ChatBot
 
 # Create a connection to the database
-db_path = "C:/Users/suhas/PycharmProjects/Chat/users.db"
 conn = sqlite3.connect(users.db)
 c = conn.cursor()
 
