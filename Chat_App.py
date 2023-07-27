@@ -5,7 +5,6 @@ from time import sleep
 import random
 from hugchat_api import HuggingChat
 from hugchat.hugchat import ChatBot
-import speech_recognition as sr
 
 # Create a connection to the database
 db_path = "C:/Users/suhas/PycharmProjects/Chat/users.db"
@@ -180,30 +179,7 @@ def chatbot():
                 except Exception as e:
                     st.error(f"An error occurred during response generation: {str(e)}")
                     # Update the chat history with the error message
-                    st.session_state.messages.append({"role": "assistant", "content": f"An error occurred: {str(e)}"})
-
-
-# Speech recognition function
-def speech_recognition():
-    recognizer = sr.Recognizer()
-    microphone = sr.Microphone()
-
-    with microphone as source:
-        recognizer.adjust_for_ambient_noise(source)
-        st.info("Listening...")
-
-        audio = recognizer.listen(source)
-
-    try:
-        prompt = recognizer.recognize_google(audio)
-        st.session_state.messages.append({"role": "user", "content": prompt})
-        st.chat_input("Enter a message", value=prompt)
-
-    except sr.UnknownValueError:
-        st.warning("Sorry, I could not understand your speech.")
-    except sr.RequestError:
-        st.error("Sorry, speech recognition service is currently unavailable.")
-
+                    st.session_state.messages.append({"role": "assistant", "content": f"An error occurred: {str(e)}"}
 
 # Script initialization
 if __name__ == "__main__":
